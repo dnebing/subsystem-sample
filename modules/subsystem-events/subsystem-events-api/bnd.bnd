@@ -1,0 +1,9 @@
+Bundle-Name: subsystem-events-api
+Bundle-SymbolicName: com.dnebinger.subsystem.events.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.dnebinger.subsystem.events.exception,\
+	com.dnebinger.subsystem.events.model,\
+	com.dnebinger.subsystem.events.service,\
+	com.dnebinger.subsystem.events.service.persistence
+-includeresource: META-INF/service.xml=../subsystem-events-service/service.xml

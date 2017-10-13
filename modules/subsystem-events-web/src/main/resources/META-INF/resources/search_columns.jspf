@@ -1,0 +1,41 @@
+
+<liferay-ui:search-container-column-text
+	cssClass="table-cell-content"
+	href="<%= rowURL %>"
+	name="name"
+	orderable="<%= true %>"
+>
+	<aui:a href="<%= String.valueOf(rowURL) %>"><strong><%= event2.getName() %></strong></aui:a>
+</liferay-ui:search-container-column-text>
+
+<liferay-ui:search-container-column-text
+	cssClass="table-cell-content"
+	href="<%= rowURL %>"
+	name="event-id"
+	orderable="<%= false %>"
+	property="eventId"
+/>
+
+<liferay-ui:search-container-column-text
+		cssClass="table-cell-content"
+		href="<%= rowURL %>"
+		name="event-desc"
+		orderable="<%= false %>"
+		property="description"
+/>
+
+<liferay-ui:search-container-column-text
+		cssClass="table-cell-content"
+		href="<%= rowURL %>"
+		name="event-date"
+		orderable="<%= false %>"
+		property="dateDisplay"
+/>
+
+<liferay-ui:search-container-column-text
+		cssClass="table-cell-content"
+		href="<%= rowURL %>"
+		name="event-location"
+		orderable="<%= false %>"
+		property="location"
+/>

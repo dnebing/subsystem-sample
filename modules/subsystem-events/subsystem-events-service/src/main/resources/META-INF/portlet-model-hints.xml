@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.dnebinger.subsystem.events.model.Event">
+		<field name="uuid" type="String" />
+		<field name="eventId" type="long" />
+		<field name="name" type="String" />
+		<field name="occursOn" type="Date" />
+		<field name="endsOn" type="Date" />
+		<field name="adultOnly" type="boolean" />
+		<field name="maxOccupants" type="int" />
+		<field name="description" type="String" />
+		<field name="floor" type="int" />
+		<field name="room" type="String" />
+		<field name="organizer" type="long" />
+	</model>
+	<model name="com.dnebinger.subsystem.events.model.EventAttendee">
+		<field name="surrogateId" type="long" />
+		<field name="eventId" type="long" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="com.dnebinger.subsystem.events.model.RelatedEvent">
+		<field name="surrogateId" type="long" />
+		<field name="eventId" type="long" />
+		<field name="relatedEventId" type="long" />
+	</model>
+</model-hints>

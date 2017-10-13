@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_0_0.dtd">
+
+<service-builder package-path="com.dnebinger.subsystem.events">
+	<namespace>SUBSYS</namespace>
+	<!--
+	  @entity Event: This is a simple entity which represents an event.  It doesn't really do a whole lot,
+	  but it is a basic container.
+	  @author dnebinger
+	  -->
+	<entity local-service="true" name="Event" remote-service="true" uuid="true">
+		<column name="eventId" primary="true" type="long" />
+
+		<column name="name" type="String" />
+		<column name="occursOn" type="Date" />
+		<column name="endsOn" type="Date" />
+		<column name="adultOnly" type="boolean" />
+		<column name="maxOccupants" type="int" />
+		<column name="description" type="String" />
+		<column name="floor" type="int" />
+		<column name="room" type="String" />
+		<column name="organizer" type="long" />
+
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<finder name="Name" return-type="Collection">
+			<finder-column name="name" />
+		</finder>
+	</entity>
+
+	<!--
+	  @entity RelatedEvent: This is a simple entity which represents a many-to-many
+	  relationship between events.
+	  @author dnebinger
+	  -->
+	<entity local-service="true" name="RelatedEvent" remote-service="true" uuid="false">
+		<column name="surrogateId" primary="true" type="long" />
+
+		<column name="eventId" type="long" />
+		<column name="relatedEventId" type="long" />
+
+		<finder name="EventId" return-type="Collection">
+			<finder-column name="eventId" />
+		</finder>
+	</entity>
+
+	<!--
+	  @entity EventAttendee: This is a simple entity which represents a one-to-many
+	  relationship between events and users.
+	  @author dnebinger
+	  -->
+	<entity local-service="true" name="EventAttendee" remote-service="true" uuid="false">
+		<column name="surrogateId" primary="true" type="long" />
+
+		<column name="eventId" type="long" />
+		<column name="userId" type="long" />
+
+		<finder name="EventId" return-type="Collection">
+			<finder-column name="eventId" />
+		</finder>
+	</entity>
+</service-builder>

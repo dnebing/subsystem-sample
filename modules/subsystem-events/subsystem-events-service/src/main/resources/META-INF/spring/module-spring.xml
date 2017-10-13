@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean class="com.dnebinger.subsystem.events.service.impl.EventLocalServiceImpl" id="com.dnebinger.subsystem.events.service.EventLocalService" />
+	<bean class="com.dnebinger.subsystem.events.service.impl.EventServiceImpl" id="com.dnebinger.subsystem.events.service.EventService" />
+	<bean class="com.dnebinger.subsystem.events.service.persistence.impl.EventPersistenceImpl" id="com.dnebinger.subsystem.events.service.persistence.EventPersistence" parent="basePersistence" />
+	<bean class="com.dnebinger.subsystem.events.service.impl.EventAttendeeLocalServiceImpl" id="com.dnebinger.subsystem.events.service.EventAttendeeLocalService" />
+	<bean class="com.dnebinger.subsystem.events.service.impl.EventAttendeeServiceImpl" id="com.dnebinger.subsystem.events.service.EventAttendeeService" />
+	<bean class="com.dnebinger.subsystem.events.service.persistence.impl.EventAttendeePersistenceImpl" id="com.dnebinger.subsystem.events.service.persistence.EventAttendeePersistence" parent="basePersistence" />
+	<bean class="com.dnebinger.subsystem.events.service.impl.RelatedEventLocalServiceImpl" id="com.dnebinger.subsystem.events.service.RelatedEventLocalService" />
+	<bean class="com.dnebinger.subsystem.events.service.impl.RelatedEventServiceImpl" id="com.dnebinger.subsystem.events.service.RelatedEventService" />
+	<bean class="com.dnebinger.subsystem.events.service.persistence.impl.RelatedEventPersistenceImpl" id="com.dnebinger.subsystem.events.service.persistence.RelatedEventPersistence" parent="basePersistence" />
+</beans>
